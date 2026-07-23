@@ -1,0 +1,6 @@
+{
+  "name": "Zopono Tailor",
+  "description": "Premium Custom Tailoring & Stitched Fashion",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

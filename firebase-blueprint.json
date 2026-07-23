@@ -1,0 +1,77 @@
+{
+  "$schema": "https://raw.githubusercontent.com/GoogleCloudPlatform/firebase-tools/master/schema/firebase-blueprint.json",
+  "entities": {
+    "products": {
+      "title": "Products",
+      "description": "Custom tailoring catalog items",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "subCategory": { "type": "string" },
+        "basePrice": { "type": "number" },
+        "stitchingCharge": { "type": "number" },
+        "description": { "type": "string" },
+        "fabricType": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "isCustomizable": { "type": "boolean" },
+        "stockStatus": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "category", "subCategory", "basePrice", "stitchingCharge", "fabricType", "imageUrl"]
+    },
+    "orders": {
+      "title": "Orders",
+      "description": "Tailoring orders placed by customers",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "district": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "paymentStatus": { "type": "string" },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "stitchingTotal": { "type": "number" },
+        "deliveryCharge": { "type": "number" },
+        "discount": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string" },
+        "estimatedDelivery": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["customerName", "phone", "address", "items", "totalAmount", "status"]
+    },
+    "users": {
+      "title": "Users",
+      "description": "Registered customer profiles",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "measurementProfiles": {
+      "title": "Measurement Profiles",
+      "description": "Saved customer custom sizing specifications",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "profileName": { "type": "string" },
+        "customerName": { "type": "string" },
+        "garmentType": { "type": "string" },
+        "measurements": { "type": "object" },
+        "design": { "type": "object" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "profileName", "measurements"]
+    }
+  }
+}
