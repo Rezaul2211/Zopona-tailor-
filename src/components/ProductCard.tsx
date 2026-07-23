@@ -51,30 +51,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           )}
         </div>
 
-        {/* Top-Right Quick View Pill Button */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onSelectProduct(product);
-          }}
-          className="absolute top-2 right-2 sm:top-3 sm:right-3 z-20 bg-white/95 hover:bg-white text-slate-800 hover:text-blue-600 px-2 sm:px-2.5 py-1 rounded-full text-[10px] font-bold border border-slate-200 shadow-md backdrop-blur-md flex items-center gap-1 transition-all active:scale-95"
-          title="Quick View Details"
-        >
-          <Eye className="w-3 h-3 text-blue-600" />
-          <span className="text-[10px]">Quick View</span>
-        </button>
-
-        {/* Quick View Button on Hover */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900/30 backdrop-blur-[2px] hidden sm:flex">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onSelectProduct(product);
-            }}
-            className="flex items-center gap-2 bg-white text-slate-900 text-xs font-bold px-4 py-2 rounded-xl border border-slate-200 shadow-xl transition transform hover:scale-105"
-          >
-            <Eye className="w-4 h-4 text-blue-600" /> Quick View
-          </button>
+        {/* View Details Text Overlay on Hover */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/40 backdrop-blur-[2px] pointer-events-none z-20">
+          <span className="text-white text-sm font-bold tracking-widest uppercase drop-shadow-lg flex items-center gap-2">
+            <Eye className="w-4 h-4" /> View Details
+          </span>
         </div>
       </div>
 
@@ -86,11 +67,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </div>
           <h3
             onClick={() => onSelectProduct(product)}
-            className="font-serif text-xs sm:text-sm font-bold text-slate-900 group-hover:text-blue-600 transition line-clamp-1 cursor-pointer leading-tight"
+            className="font-serif text-xs sm:text-sm font-bold text-slate-900 group-hover:text-blue-600 transition line-clamp-1 cursor-pointer leading-tight min-h-[16px] sm:min-h-[20px]"
           >
             {product.title}
           </h3>
-          <p className="text-[10px] sm:text-[11px] text-slate-500 line-clamp-1 sm:line-clamp-2 mt-0.5 sm:mt-1 leading-relaxed">
+          <p className="text-[10px] sm:text-[11px] text-slate-500 line-clamp-2 mt-0.5 sm:mt-1 leading-relaxed min-h-[30px] sm:min-h-[34px]">
             {product.description}
           </p>
         </div>

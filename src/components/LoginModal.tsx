@@ -55,19 +55,19 @@ export const LoginModal: React.FC<LoginModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
-      <div className="glass-panel border-amber-500/40 rounded-2xl w-full max-w-md shadow-2xl text-slate-100 overflow-hidden">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
+      <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-md shadow-2xl text-slate-900 overflow-hidden">
         {/* Header */}
-        <div className="bg-slate-950 px-6 py-4 border-b border-slate-800 flex items-center justify-between">
+        <div className="bg-slate-900 px-6 py-4 border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="p-2 bg-amber-500/20 text-amber-400 rounded-xl">
+            <div className="p-2 bg-blue-600/20 text-blue-400 rounded-xl">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-serif text-base font-bold text-amber-200">
-                Zopono Tailor Account Login
+              <h3 className="font-serif text-base font-bold text-white">
+                Zopono Tailor Login
               </h3>
-              <p className="text-[11px] text-slate-400">Sign in to save sizes & manage orders</p>
+              <p className="text-[11px] text-slate-300">Sign in to save sizes & manage orders</p>
             </div>
           </div>
           <button
@@ -81,7 +81,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
         {/* Content */}
         <div className="p-6 space-y-5">
           {errorMsg && (
-            <div className="p-3 bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs rounded-xl">
+            <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl">
               {errorMsg}
             </div>
           )}
@@ -90,7 +90,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
           <button
             onClick={handleGoogleAuth}
             disabled={isLoading}
-            className="w-full bg-slate-950 hover:bg-slate-800 border border-amber-500/40 text-amber-200 font-bold text-xs py-3 rounded-xl transition flex items-center justify-center gap-3 shadow-lg group"
+            className="w-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-900 font-bold text-xs py-3 rounded-xl transition flex items-center justify-center gap-3 shadow-sm group"
           >
             <svg className="w-5 h-5 bg-white rounded-full p-0.5" viewBox="0 0 24 24">
               <path
@@ -113,43 +113,43 @@ export const LoginModal: React.FC<LoginModalProps> = ({
             <span>{isLoading ? 'Connecting Google Auth...' : 'Continue with Google Sign In'}</span>
           </button>
 
-          <div className="flex items-center gap-2 my-2 text-slate-500 text-[10px]">
-            <div className="h-px bg-slate-800 flex-1" />
-            <span>OR LOGIN WITH GMAIL</span>
-            <div className="h-px bg-slate-800 flex-1" />
+          <div className="flex items-center gap-2 my-2 text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+            <div className="h-px bg-slate-200 flex-1" />
+            <span>Or log in with Email</span>
+            <div className="h-px bg-slate-200 flex-1" />
           </div>
 
           {/* Direct Email Form */}
-          <form onSubmit={handleDirectEmailSubmit} className="space-y-3 pt-1">
+          <form onSubmit={handleDirectEmailSubmit} className="space-y-4 pt-1">
             <div>
-              <label className="block text-xs text-slate-300 mb-1">Your Gmail Address</label>
+              <label className="block text-xs font-bold text-slate-700 mb-1">Your Email Address</label>
               <div className="relative">
                 <input
                   type="email"
                   required
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
-                  placeholder="e.g. xmrezaul.karim998@gmail.com"
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl py-2 pl-9 pr-3 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-400"
+                  placeholder="e.g. name@example.com"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 pl-10 pr-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition"
                 />
-                <Mail className="w-4 h-4 text-slate-500 absolute left-3 top-2.5" />
+                <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs text-slate-300 mb-1">Name (Optional)</label>
+              <label className="block text-xs font-bold text-slate-700 mb-1">Name (Optional)</label>
               <input
                 type="text"
                 value={nameInput}
                 onChange={(e) => setNameInput(e.target.value)}
-                placeholder="e.g. Rezaul Karim"
-                className="w-full bg-slate-950 border border-slate-700 rounded-xl p-2 text-xs text-slate-100 focus:outline-none focus:border-amber-400"
+                placeholder="e.g. John Doe"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-slate-800 hover:bg-slate-700 text-amber-300 font-bold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-sm"
             >
               <LogIn className="w-4 h-4" /> Enter Account
             </button>

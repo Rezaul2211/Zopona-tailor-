@@ -572,7 +572,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                           </div>
 
                           {/* Quick Action Bar & Dropdown */}
-                          <div className="flex flex-col gap-2 bg-slate-50 p-3 rounded-xl border border-slate-200 shrink-0 min-w-[300px]">
+                          <div className="flex flex-col gap-2 bg-slate-50 p-3 rounded-xl border border-slate-200 shrink-0 w-full md:w-[300px]">
                             <div className="flex items-center justify-between text-[10px] font-bold uppercase text-blue-700 font-mono">
                               <span>Set Status:</span>
                               <span className="text-slate-800 font-bold">{ord.status}</span>
